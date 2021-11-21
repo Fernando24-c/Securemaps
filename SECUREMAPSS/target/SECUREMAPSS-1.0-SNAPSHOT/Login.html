@@ -1,0 +1,106 @@
+
+<!-- Webelopment	5IM8 
+•	Pérez Sánchez Fernando Alberto -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Securemaps</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Css/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/jpg" href="Imagenes/favicon.ico"/>
+</head>
+<script>
+ 	function alerta(campo) { 
+		alert("Por favor, completa el campo "+campo) ;
+	}
+	function validar_formulario(form) {
+                if (form.correo.value === "") { //para dar un mensaje si est vacio el campo
+			alerta('\"Correo Electronico\"'); form.correo.focus(); 
+                        return true; 
+                    }
+                if (form.campo_contrasena.value === "") { //para dar un mensaje si est vacio el campo
+			alerta('\"Contraseña\"'); form.contra.focus(); 
+                        return true; 
+                    }
+		form.submit(); //para verificar
+                alert("Datos ingresados!"); 
+            }
+    </script> 
+<body>
+  <div class="cont">
+      <!--Formulario LOGIN-->
+          
+    <div class="form sign-in">
+      <h2>Iniciar Sesión</h2>
+      <label>
+        <span>Correo Electrónico</span>
+        <form name="Login" action="Jsp/Usuario.jsp" method="post">
+            <input type="email" name="email" id="correo" required="" placeholder="alguien@example.com">
+      </label>
+      <label>
+        <span>Contraseña</span>
+        <input type="password" name="password" id="contra" required="" >
+      </label>
+      <button class="submit" type="button" onclick="validar_formulario()">Siguiente</button>
+      
+      </form>
+      <p class="forgot-pass">¿Has olvidado tu contraseña?</p>
+      <div class="social-media">
+        <ul>
+          <li><img src="Imagenes/facebook.png" alt="Facebook"></li>
+          <li><img src="Imagenes/twitter.png" alt="twitter"></li>
+          <li><img src="Imagenes/linkedin.png" alt="linkedin"></li>
+          <li><img src="Imagenes/instagram.png" alt="instagram"></li>
+        </ul>
+      </div>
+    </div>
+
+      
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h2>¿Nuevo aquí?</h2>
+          <p>¡Regístrate y descubre una gran cantidad de lugares!</p>
+        </div>
+        <div class="img-text m-in">
+          <h2>¿Ya estás registrado?</h2>
+          <p>Si ya te has registrado antes, solamente inicia sesión. </p><p>¡Te extrañamos!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Registrarse</span>
+          <span class="m-in">Iniciar Sesión</span>
+        </div>
+      </div>
+        
+       <!--Formulario REGISTRO-->
+      <div class="form sign-up">
+          <form name="registro" method="post" action="Jsp/Login.jsp">
+              
+        <h2>Registrarse</h2>
+        <label>
+          <span>Nombre</span>
+          <input type="text"  required="" id="nombre">
+        </label>
+        <label>
+          <span>Correo Electrónico</span>
+          <input type="email" placeholder="alguien@example.com" required="" id="correo">
+        </label>
+        <label>
+          <span>Contraseña</span>
+          <input type="password" placeholder="*******" required="" id="contrasenia">
+        </label>
+        <label>
+          <span>Confirmar Contraseña</span>
+          <input type="password" required="" placeholder="*******">
+        </label>
+        <button type="button" class="submit">Registrarme ahora</button>
+          </form>  
+      </div>
+        
+    </div>
+  </div>
+<script type="text/javascript" src="JavaScript/login.js"></script>
+</body>
+</html>
